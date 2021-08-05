@@ -1,0 +1,33 @@
+﻿@model BlogApp.Models.Entity.Tbl_Post
+@{
+    ViewBag.Title = "AddBlog";
+}
+
+<h2>Add Post</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label>Picture (Link)</label>
+        @Html.TextBoxFor(m=>m.PostImage, new { @class="form-control"})
+    </div>
+
+    <br />
+
+    <div>
+        <label>Title</label>
+        @Html.TextBoxFor(m=>m.PostTitle, new { @class="form-control"})
+    </div>
+
+    <br />
+
+    <div>
+        <label>Content</label>
+        @Html.TextAreaFor(m=>m.PostContent, new { @class="form-control", @style="resize:none; height:300px;" })
+    </div>
+    
+    <br />
+
+    <div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

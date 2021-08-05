@@ -1,0 +1,34 @@
+﻿@using BlogApp.Models.Entity
+@model List<Tbl_User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach(var user in Model)
+    {
+        <tr>
+            <td>@user.UserId</td>
+            <td>@user.UserName</td>
+            <td>@user.UserPassword</td>
+            <td>@user.UserRole</td>
+            <td><a href="/Account/GetUser/@user.UserId" class="btn btn-warning">Edit</a></td>
+            <td><a href="/Account/DeleteUser/@user.UserId" class="btn btn-danger">Delete</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/Account/NewUser" class="btn btn-primary">New User</a>

@@ -1,0 +1,35 @@
+﻿@model BlogApp.Models.Entity.Tbl_User
+@{
+    ViewBag.Title = "NewUser";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>New User</h2>
+
+<form class="form-group" method="post">
+
+    <div>
+        <label>Username</label>
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Password</label>
+        @Html.TextBoxFor(m => m.UserPassword, new { @class = "form-control", type="Password" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Role</label>
+        @Html.TextBoxFor(m => m.UserRole, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+﻿@using BlogApp.Models.Entity
+@model List<Tbl_Post>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var blog in Model)
+    {
+        <tr>
+            <td>@blog.PostId</td>
+            <td>@blog.PostTitle</td>
+            <td><a href="/Admin/GetPost/@blog.PostId" class="btn btn-warning">Edit</a></td>
+            <td><a href="/Admin/DeletePost/@blog.PostId" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/AddBlog/" class="btn btn-primary">New Post</a>

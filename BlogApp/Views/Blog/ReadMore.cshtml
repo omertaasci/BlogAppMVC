@@ -1,0 +1,20 @@
+﻿@model BlogApp.Models.Entity.Tbl_Post
+@{
+    ViewBag.Title = "ReadMore";
+}
+
+
+@using (Html.BeginForm("ReadMore", "Blog", FormMethod.Post))
+{
+
+    <img style="width: 100%;" src="@Html.DisplayFor(m=>m.PostImage)">
+
+    <br />
+    <br />
+    <br />
+
+    <h1 style="text-transform:uppercase">@Html.DisplayFor(m=>m.PostTitle)</h1>
+    <article style="font-size:16px">
+        @Html.DisplayFor(m => m.PostContent)
+    </article>
+}

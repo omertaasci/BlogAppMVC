@@ -1,0 +1,21 @@
+﻿@using BlogApp.Models.Entity
+@model List<Tbl_Post>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Blog Entries</h2>
+<br />
+<br />
+<br />
+
+
+@foreach (var x in Model)
+{
+        <h3 style="margin-left: 20px;" >@x.PostTitle</h3>
+        <article style="margin-left: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" >@x.PostContent</article>
+        <br />
+        <a href="/Blog/ReadMore/@x.PostId" class="btn btn-primary" style="margin-left: 20px;" >Read More</a>
+        <hr />
+        <br />
+}
