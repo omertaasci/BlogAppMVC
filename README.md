@@ -5,10 +5,10 @@ Blog app that i made using C# ASP.NET MVC MSSQL
 Project Login information
 -------------------------
 Admin -
-Username : Admin Password : 123
+Username : Admin -- Password : 123
 
 Editor -
-Editor : Admin Password : 123
+Username : Editor -- Password : 123
 
 User -
-User : Admin Password : 123
+Username : User -- Password : 123
