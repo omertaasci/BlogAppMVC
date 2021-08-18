@@ -1,6 +1,6 @@
 # BlogAppMVC
 Blog App
-Blog app that i made using C# ASP.NET MVC MSSQL
+Blog App I made using C# ASP.NET MVC MSSQL
 
 Login information
 -------------------------
