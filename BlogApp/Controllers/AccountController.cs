@@ -7,6 +7,7 @@ using BlogApp.Models.Entity;
 
 namespace BlogApp.Controllers
 {
+    //only role 'A' access
     [Authorize(Roles = "A")]
     public class AccountController : Controller
     {
@@ -16,6 +17,7 @@ namespace BlogApp.Controllers
             return View(db.Tbl_User.ToList());
         }
 
+        //-------- add new user --------
         [HttpGet]
         public ActionResult NewUser()
         {
@@ -30,12 +32,14 @@ namespace BlogApp.Controllers
             return RedirectToAction("Index");
         }
 
+        //-------- getting user information for edit user --------
         public ActionResult GetUser(int id)
         {
             var getUser = db.Tbl_User.Find(id);
             return View("GetUser", getUser);
         }
 
+        //-------- edit user--------
         public ActionResult EditUser(Tbl_User user)
         {
             var findUser = db.Tbl_User.Find(user.UserId);
@@ -48,7 +52,7 @@ namespace BlogApp.Controllers
             return RedirectToAction("Index");
         }
 
-
+        //-------- delete user --------
         public ActionResult DeleteUser(int id)
         {
             var findUser = db.Tbl_User.Find(id);

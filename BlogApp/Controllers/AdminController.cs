@@ -7,7 +7,8 @@ using BlogApp.Models.Entity;
 
 namespace BlogApp.Controllers
 {
-    [Authorize]
+    //only role admin and editor access
+    [Authorize(Roles = classes.CustomRoles.Admin_Editor)]
     public class AdminController : Controller
     {
         BlogDBEntities db = new BlogDBEntities();
@@ -15,6 +16,8 @@ namespace BlogApp.Controllers
         {
             return View(db.Tbl_Post.ToList());
         }
+
+        //-------- add new blog --------
         [HttpGet]
         public ActionResult AddBlog()
         {
@@ -28,12 +31,14 @@ namespace BlogApp.Controllers
             return RedirectToAction("Index");
         }
 
+        //-------- getting post information for edit post --------
         public ActionResult GetPost(int id)
         {
             var getPost = db.Tbl_Post.Find(id);
             return View("GetPost", getPost);
         }
 
+        //-------- edit post --------
         public ActionResult EditPost(Tbl_Post post)
         {
             var findPost = db.Tbl_Post.Find(post.PostId);
@@ -46,7 +51,7 @@ namespace BlogApp.Controllers
             return RedirectToAction("Index");
         }
 
-
+        //-------- delete post --------
         public ActionResult DeletePost(int id)
         {
             var getPost = db.Tbl_Post.Find(id);

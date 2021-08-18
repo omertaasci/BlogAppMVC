@@ -16,6 +16,7 @@ namespace BlogApp.Controllers
             return View();
         }
 
+        //Login
         [HttpPost]
         public ActionResult Login(Tbl_User user)
         {
@@ -34,6 +35,7 @@ namespace BlogApp.Controllers
             }
         }
 
+        //Log Out
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
