@@ -25,7 +25,8 @@ Home
 
 Read More
 --
-![ReadMore](https://user-images.githubusercontent.com/65555672/129900618-1d192421-9f2a-47ba-9bd5-e2d6b5e6408a.png)
+![ReadMore](https://user-images.githubusercontent.com/65555672/129904619-fc8b18d7-424f-4584-b055-0fdc72bcd8ab.png)
+
 <br>
 
 Admin Panel
